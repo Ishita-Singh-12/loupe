@@ -19,6 +19,7 @@ jobs:
       - run: npm run build
       - run: npx playwright install --with-deps chromium
       - run: CHROME_PATH=$(find ~/.cache/ms-playwright -path '*/chrome-linux*/chrome' -type f | head -1) npm run test:ui
+      - run: CHROME_PATH=$(find ~/.cache/ms-playwright -path '*/chrome-linux*/chrome' -type f | head -1) npm run test:dark
       - uses: actions/upload-artifact@v4
         if: always()
         with:
