@@ -1,9 +1,4 @@
 import data from './data.json';
-export function previewApi(path){
- const [route,query='']=path.split('?'),params=new URLSearchParams(query);
- if(route==='/services')return data.services;
- if(route==='/stats')return data.summaries[params.get('status')||''];
- if(route==='/traces')return {...data.traces,traces:data.traces.traces.filter(t=>(!params.get('status')||t.status===params.get('status'))&&(!params.get('service')||t.service===params.get('service')))};
- if(route.startsWith('/traces/'))return data.details[route.slice(8)];
- throw Error('Not available in the static preview');
-}
+export const previewAnchor=Date.parse(data.anchor);
+function summary(rows){const durations=rows.map(t=>t.duration_ms).sort((a,b)=>a-b);return{total:rows.length,success:rows.filter(t=>t.status==='OK').length,errors:rows.filter(t=>t.status==='ERROR').length,incomplete:rows.filter(t=>t.status==='INCOMPLETE').length,known_cost:rows.reduce((n,t)=>n+t.known_cost,0),unpriced:0,input_tokens:rows.reduce((n,t)=>n+t.input_tokens,0),output_tokens:rows.reduce((n,t)=>n+t.output_tokens,0),p95:[durations[Math.max(0,Math.ceil(durations.length*.95)-1)]||0]};}
+export function previewApi(path){const[route,query='']=path.split('?'),p=new URLSearchParams(query),days=Number(p.get('days')||7),to=p.has('before')?Date.parse(p.get('before')):previewAnchor,from=to-days*86400000;const rows=data.traces.traces.filter(t=>Date.parse(t.started_at)>=from&&Date.parse(t.started_at)<to&&(!p.get('status')||t.status===p.get('status'))&&(!p.get('service')||t.service===p.get('service')));if(route==='/services')return data.services;if(route==='/stats')return{summary:summary(rows)};if(route==='/traces')return{traces:rows};if(route.startsWith('/traces/'))return data.details[route.slice(8)];throw Error('Unavailable in preview');}
