@@ -12,7 +12,7 @@ try{
  const stats=await(await fetch(base+'/api/stats')).json();assert.equal(stats.summary.total,8);assert.equal(stats.summary.errors,2);assert.equal(stats.summary.success,6);
  browser=await chromium.launch({executablePath:process.env.CHROME_PATH||'/usr/bin/google-chrome',headless:true,args:['--no-sandbox']});
  const page=await browser.newPage({viewport:{width:1440,height:1000}});const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto(base);await page.getByRole('button',{name:'documentation agent',exact:true}).first().waitFor();
+ await page.goto(base+'/?classic');await page.getByRole('button',{name:'documentation agent',exact:true}).first().waitFor();
  await mkdir('artifacts',{recursive:true});await page.screenshot({path:'artifacts/dashboard-desktop.png',fullPage:true});
  await page.getByRole('button',{name:'documentation agent',exact:true}).first().click();await page.getByRole('dialog').waitFor();await page.getByText('Span waterfall',{exact:true}).waitFor();
  await page.screenshot({path:'artifacts/waterfall-desktop.png',fullPage:true});await page.getByRole('button',{name:'Close trace'}).click();
