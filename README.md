@@ -109,3 +109,6 @@ SDK tests verify nested/async contexts, export failure isolation, bounded overfl
 ### Static website preview
 GitHub Pages builds the chosen dark dashboard with `VITE_STATIC_PREVIEW=true`.
 The current preview uses 64 explicitly simulated task runs, including LLM spans, tokens and illustrative costs. The single badge identifies it as simulated and read-only; no provider executions or paid charges are claimed. Previous-period deltas and range filters are computed from this fixture anchored to October 5, 2026. Rates are illustrative, not actual provider prices. It supports chart selection, custom filters, range selection and span inspection. Normal builds still use the real API, show real ingested spans and do not invent period comparisons. Regenerate the synthetic preview with `node tests/generate-rich-preview.mjs`. The earlier real tool-only capture script is retained separately.
+
+## Live backend
+The backend now accepts OTLP/HTTP JSON at `/v1/traces`, scoped read/write keys, exact CORS origins, cursor pagination, prior-period stats and receive-time retention. See [production notes](docs/production.md) for deployment, auth limits and hosting choices. It is a tested single-workspace portfolio backend, not a claim of high-volume production validation. The public Pages site remains simulated until a host is selected.
