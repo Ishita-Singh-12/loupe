@@ -105,3 +105,7 @@ SDK tests verify nested/async contexts, export failure isolation, bounded overfl
 - No prompt, response, function arguments or tool output capture by default. Custom attributes are your responsibility: do not send secrets or personal data.
 - Single workspace, API-key access, no durable export spool, no inbound remote traceparent continuation, no OTLP adapter yet.
 - At larger volumes, move aggregates to a columnar store and add sampling, retention and pagination.
+
+### Static website preview
+GitHub Pages builds the chosen dark dashboard with `VITE_STATIC_PREVIEW=true`.
+The preview uses a snapshot of actual local SDK demo executions, with deliberate failures and no LLM calls. It supports filters, trace/span inspection and navigation, but is read-only: no live ingestion, MongoDB or backend is hosted. Refresh shows the same snapshot. Normal builds still use the real API. Regenerate demo data locally with `node tests/export-preview.mjs`.

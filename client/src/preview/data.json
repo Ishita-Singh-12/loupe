@@ -1,0 +1,913 @@
+{
+  "traces": {
+    "traces": [
+      {
+        "_id": "db6ca02979929ac2b53a087d8c01f662",
+        "started_at": "2026-10-05T11:33:15.849Z",
+        "ended_at": "2026-10-05T11:33:15.909Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 3,
+        "errors": 2,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 60,
+        "status": "ERROR"
+      },
+      {
+        "_id": "d2fd7834bd0384902192a6ed4d8f8d84",
+        "started_at": "2026-10-05T11:33:15.768Z",
+        "ended_at": "2026-10-05T11:33:15.849Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 4,
+        "errors": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 81,
+        "status": "OK"
+      },
+      {
+        "_id": "7edd9441902bb75fa7633c220bc26d12",
+        "started_at": "2026-10-05T11:33:15.687Z",
+        "ended_at": "2026-10-05T11:33:15.768Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 4,
+        "errors": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 81,
+        "status": "OK"
+      },
+      {
+        "_id": "ac43298a9e688b185fd79a780465d60b",
+        "started_at": "2026-10-05T11:33:15.606Z",
+        "ended_at": "2026-10-05T11:33:15.687Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 4,
+        "errors": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 81,
+        "status": "OK"
+      },
+      {
+        "_id": "e608b7aa26e4cc1ddf4332299fadd39e",
+        "started_at": "2026-10-05T11:33:15.546Z",
+        "ended_at": "2026-10-05T11:33:15.606Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 3,
+        "errors": 2,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 60,
+        "status": "ERROR"
+      },
+      {
+        "_id": "52a71b14276179d75d1d8b0c853d49fe",
+        "started_at": "2026-10-05T11:33:15.465Z",
+        "ended_at": "2026-10-05T11:33:15.546Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 4,
+        "errors": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 81,
+        "status": "OK"
+      },
+      {
+        "_id": "0aa17331e7ca31c8a903a5a4d9c8ef05",
+        "started_at": "2026-10-05T11:33:15.384Z",
+        "ended_at": "2026-10-05T11:33:15.465Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 4,
+        "errors": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 81,
+        "status": "OK"
+      },
+      {
+        "_id": "b7d4180a43992e89879f7f72a856134a",
+        "started_at": "2026-10-05T11:33:15.303Z",
+        "ended_at": "2026-10-05T11:33:15.384Z",
+        "name": "documentation agent",
+        "service": "docs-agent",
+        "span_count": 4,
+        "errors": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "root": 1,
+        "duration_ms": 81,
+        "status": "OK"
+      }
+    ]
+  },
+  "services": {
+    "services": [
+      "docs-agent"
+    ]
+  },
+  "details": {
+    "db6ca02979929ac2b53a087d8c01f662": {
+      "trace_id": "db6ca02979929ac2b53a087d8c01f662",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807c2",
+          "span_id": "33043e1e4517add4",
+          "trace_id": "db6ca02979929ac2b53a087d8c01f662",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.884Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "0dbe3a4c3f08b5a6",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.849Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807c4",
+          "span_id": "0dbe3a4c3f08b5a6",
+          "trace_id": "db6ca02979929ac2b53a087d8c01f662",
+          "attributes": {
+            "error.type": "TimeoutError"
+          },
+          "cost_usd": null,
+          "duration_ms": 60,
+          "ended_at": "2026-10-05T11:33:15.909Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.849Z",
+          "status": "ERROR"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807c3",
+          "trace_id": "db6ca02979929ac2b53a087d8c01f662",
+          "span_id": "d833b4ccbba7a6d9",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources",
+            "error.type": "TimeoutError"
+          },
+          "cost_usd": null,
+          "duration_ms": 25,
+          "ended_at": "2026-10-05T11:33:15.909Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "0dbe3a4c3f08b5a6",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.884Z",
+          "status": "ERROR"
+        }
+      ]
+    },
+    "d2fd7834bd0384902192a6ed4d8f8d84": {
+      "trace_id": "d2fd7834bd0384902192a6ed4d8f8d84",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807be",
+          "span_id": "cf3a46f39e23fb0d",
+          "trace_id": "d2fd7834bd0384902192a6ed4d8f8d84",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.803Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "070f927bf45b76ef",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.768Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807c1",
+          "trace_id": "d2fd7834bd0384902192a6ed4d8f8d84",
+          "span_id": "070f927bf45b76ef",
+          "attributes": {},
+          "cost_usd": null,
+          "duration_ms": 81,
+          "ended_at": "2026-10-05T11:33:15.849Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.768Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807bf",
+          "trace_id": "d2fd7834bd0384902192a6ed4d8f8d84",
+          "span_id": "7afcc2ce63dde7c5",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources"
+          },
+          "cost_usd": null,
+          "duration_ms": 25,
+          "ended_at": "2026-10-05T11:33:15.828Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "070f927bf45b76ef",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.803Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807c0",
+          "span_id": "e277df4617cb15a6",
+          "trace_id": "d2fd7834bd0384902192a6ed4d8f8d84",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "compose_answer"
+          },
+          "cost_usd": null,
+          "duration_ms": 21,
+          "ended_at": "2026-10-05T11:33:15.849Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool compose_answer",
+          "parent_span_id": "070f927bf45b76ef",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.828Z",
+          "status": "OK"
+        }
+      ]
+    },
+    "7edd9441902bb75fa7633c220bc26d12": {
+      "trace_id": "7edd9441902bb75fa7633c220bc26d12",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807ba",
+          "span_id": "cb3e6489d5579c9e",
+          "trace_id": "7edd9441902bb75fa7633c220bc26d12",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.722Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "1d3b9e604311847e",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.687Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807bd",
+          "trace_id": "7edd9441902bb75fa7633c220bc26d12",
+          "span_id": "1d3b9e604311847e",
+          "attributes": {},
+          "cost_usd": null,
+          "duration_ms": 81,
+          "ended_at": "2026-10-05T11:33:15.768Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.687Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807bb",
+          "trace_id": "7edd9441902bb75fa7633c220bc26d12",
+          "span_id": "8dcf65d978aee1f4",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources"
+          },
+          "cost_usd": null,
+          "duration_ms": 26,
+          "ended_at": "2026-10-05T11:33:15.748Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "1d3b9e604311847e",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.722Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807bc",
+          "span_id": "89ed55fc59a7c3b3",
+          "trace_id": "7edd9441902bb75fa7633c220bc26d12",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "compose_answer"
+          },
+          "cost_usd": null,
+          "duration_ms": 20,
+          "ended_at": "2026-10-05T11:33:15.768Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool compose_answer",
+          "parent_span_id": "1d3b9e604311847e",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.748Z",
+          "status": "OK"
+        }
+      ]
+    },
+    "ac43298a9e688b185fd79a780465d60b": {
+      "trace_id": "ac43298a9e688b185fd79a780465d60b",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807b6",
+          "span_id": "64710061d4eb1347",
+          "trace_id": "ac43298a9e688b185fd79a780465d60b",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.641Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "ba0327faf6d4e5b3",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.606Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807b9",
+          "trace_id": "ac43298a9e688b185fd79a780465d60b",
+          "span_id": "ba0327faf6d4e5b3",
+          "attributes": {},
+          "cost_usd": null,
+          "duration_ms": 81,
+          "ended_at": "2026-10-05T11:33:15.687Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.606Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807b7",
+          "trace_id": "ac43298a9e688b185fd79a780465d60b",
+          "span_id": "19dd300cfb883c4d",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources"
+          },
+          "cost_usd": null,
+          "duration_ms": 26,
+          "ended_at": "2026-10-05T11:33:15.667Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "ba0327faf6d4e5b3",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.641Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807b8",
+          "span_id": "abc4129672659e6a",
+          "trace_id": "ac43298a9e688b185fd79a780465d60b",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "compose_answer"
+          },
+          "cost_usd": null,
+          "duration_ms": 20,
+          "ended_at": "2026-10-05T11:33:15.687Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool compose_answer",
+          "parent_span_id": "ba0327faf6d4e5b3",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.667Z",
+          "status": "OK"
+        }
+      ]
+    },
+    "e608b7aa26e4cc1ddf4332299fadd39e": {
+      "trace_id": "e608b7aa26e4cc1ddf4332299fadd39e",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807b0",
+          "trace_id": "e608b7aa26e4cc1ddf4332299fadd39e",
+          "span_id": "c3b56d2bd33bed92",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.581Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "dd495f6b09103251",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.546Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807b3",
+          "trace_id": "e608b7aa26e4cc1ddf4332299fadd39e",
+          "span_id": "dd495f6b09103251",
+          "attributes": {
+            "error.type": "TimeoutError"
+          },
+          "cost_usd": null,
+          "duration_ms": 60,
+          "ended_at": "2026-10-05T11:33:15.606Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.546Z",
+          "status": "ERROR"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807b2",
+          "span_id": "d717c1f383169c64",
+          "trace_id": "e608b7aa26e4cc1ddf4332299fadd39e",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources",
+            "error.type": "TimeoutError"
+          },
+          "cost_usd": null,
+          "duration_ms": 25,
+          "ended_at": "2026-10-05T11:33:15.606Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "dd495f6b09103251",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.581Z",
+          "status": "ERROR"
+        }
+      ]
+    },
+    "52a71b14276179d75d1d8b0c853d49fe": {
+      "trace_id": "52a71b14276179d75d1d8b0c853d49fe",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807ac",
+          "trace_id": "52a71b14276179d75d1d8b0c853d49fe",
+          "span_id": "95b48fc4a2cb720e",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.500Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "da2af1634ad913a6",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.465Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807af",
+          "span_id": "da2af1634ad913a6",
+          "trace_id": "52a71b14276179d75d1d8b0c853d49fe",
+          "attributes": {},
+          "cost_usd": null,
+          "duration_ms": 81,
+          "ended_at": "2026-10-05T11:33:15.546Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.465Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807ad",
+          "span_id": "0da1288ae12b6271",
+          "trace_id": "52a71b14276179d75d1d8b0c853d49fe",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources"
+          },
+          "cost_usd": null,
+          "duration_ms": 25,
+          "ended_at": "2026-10-05T11:33:15.525Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "da2af1634ad913a6",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.500Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807ae",
+          "trace_id": "52a71b14276179d75d1d8b0c853d49fe",
+          "span_id": "fe4522de54ac9df9",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "compose_answer"
+          },
+          "cost_usd": null,
+          "duration_ms": 20,
+          "ended_at": "2026-10-05T11:33:15.546Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool compose_answer",
+          "parent_span_id": "da2af1634ad913a6",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.526Z",
+          "status": "OK"
+        }
+      ]
+    },
+    "0aa17331e7ca31c8a903a5a4d9c8ef05": {
+      "trace_id": "0aa17331e7ca31c8a903a5a4d9c8ef05",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807a8",
+          "trace_id": "0aa17331e7ca31c8a903a5a4d9c8ef05",
+          "span_id": "8f7f9099a2ca059a",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 35,
+          "ended_at": "2026-10-05T11:33:15.419Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "fd423dd145110832",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.384Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807ab",
+          "span_id": "fd423dd145110832",
+          "trace_id": "0aa17331e7ca31c8a903a5a4d9c8ef05",
+          "attributes": {},
+          "cost_usd": null,
+          "duration_ms": 81,
+          "ended_at": "2026-10-05T11:33:15.465Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.384Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807a9",
+          "span_id": "5893290e22847968",
+          "trace_id": "0aa17331e7ca31c8a903a5a4d9c8ef05",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources"
+          },
+          "cost_usd": null,
+          "duration_ms": 26,
+          "ended_at": "2026-10-05T11:33:15.445Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "fd423dd145110832",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.419Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807aa",
+          "trace_id": "0aa17331e7ca31c8a903a5a4d9c8ef05",
+          "span_id": "57303103fc75e564",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "compose_answer"
+          },
+          "cost_usd": null,
+          "duration_ms": 20,
+          "ended_at": "2026-10-05T11:33:15.465Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool compose_answer",
+          "parent_span_id": "fd423dd145110832",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.445Z",
+          "status": "OK"
+        }
+      ]
+    },
+    "b7d4180a43992e89879f7f72a856134a": {
+      "trace_id": "b7d4180a43992e89879f7f72a856134a",
+      "spans": [
+        {
+          "_id": "6ac38afbaf95f87537b807a4",
+          "span_id": "c50f1d8caa2aafb4",
+          "trace_id": "b7d4180a43992e89879f7f72a856134a",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "search_docs"
+          },
+          "cost_usd": null,
+          "duration_ms": 36,
+          "ended_at": "2026-10-05T11:33:15.339Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool search_docs",
+          "parent_span_id": "5b5c6f3527de0665",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.303Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807a7",
+          "span_id": "5b5c6f3527de0665",
+          "trace_id": "b7d4180a43992e89879f7f72a856134a",
+          "attributes": {},
+          "cost_usd": null,
+          "duration_ms": 81,
+          "ended_at": "2026-10-05T11:33:15.384Z",
+          "kind": "INTERNAL",
+          "name": "documentation agent",
+          "parent_span_id": null,
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.303Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807a5",
+          "span_id": "e08c8aaf0616ce43",
+          "trace_id": "b7d4180a43992e89879f7f72a856134a",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "validate_sources"
+          },
+          "cost_usd": null,
+          "duration_ms": 25,
+          "ended_at": "2026-10-05T11:33:15.364Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool validate_sources",
+          "parent_span_id": "5b5c6f3527de0665",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.339Z",
+          "status": "OK"
+        },
+        {
+          "_id": "6ac38afbaf95f87537b807a6",
+          "trace_id": "b7d4180a43992e89879f7f72a856134a",
+          "span_id": "944c2a72cb277543",
+          "attributes": {
+            "gen_ai.operation.name": "execute_tool",
+            "gen_ai.tool.name": "compose_answer"
+          },
+          "cost_usd": null,
+          "duration_ms": 20,
+          "ended_at": "2026-10-05T11:33:15.384Z",
+          "kind": "INTERNAL",
+          "name": "execute_tool compose_answer",
+          "parent_span_id": "5b5c6f3527de0665",
+          "pricing_reason": "unknown model or missing usage",
+          "pricing_version": "demo-v1",
+          "resource": {
+            "service.name": "docs-agent"
+          },
+          "started_at": "2026-10-05T11:33:15.364Z",
+          "status": "OK"
+        }
+      ]
+    }
+  },
+  "summaries": {
+    "": {
+      "summary": {
+        "_id": null,
+        "total": 8,
+        "success": 6,
+        "errors": 2,
+        "incomplete": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "p95": [
+          81
+        ]
+      },
+      "daily": [
+        {
+          "_id": "2026-10-05",
+          "runs": 8,
+          "known_cost": 0,
+          "unpriced": 0
+        }
+      ]
+    },
+    "OK": {
+      "summary": {
+        "_id": null,
+        "total": 6,
+        "success": 6,
+        "errors": 0,
+        "incomplete": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "p95": [
+          81
+        ]
+      },
+      "daily": [
+        {
+          "_id": "2026-10-05",
+          "runs": 6,
+          "known_cost": 0,
+          "unpriced": 0
+        }
+      ]
+    },
+    "ERROR": {
+      "summary": {
+        "_id": null,
+        "total": 2,
+        "success": 0,
+        "errors": 2,
+        "incomplete": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "p95": [
+          60
+        ]
+      },
+      "daily": [
+        {
+          "_id": "2026-10-05",
+          "runs": 2,
+          "known_cost": 0,
+          "unpriced": 0
+        }
+      ]
+    },
+    "INCOMPLETE": {
+      "summary": {
+        "total": 0,
+        "success": 0,
+        "errors": 0,
+        "incomplete": 0,
+        "known_cost": 0,
+        "unpriced": 0,
+        "input_tokens": 0,
+        "output_tokens": 0,
+        "p95": [
+          0
+        ]
+      },
+      "daily": []
+    }
+  }
+}
