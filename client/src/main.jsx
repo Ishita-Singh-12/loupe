@@ -3,6 +3,7 @@ import {createRoot} from 'react-dom/client';
 import {Activity,Search,ArrowUpRight,ChevronRight,Clock,CheckCircle2,Layers,RefreshCw,AlertTriangle,Terminal,Eye} from 'lucide-react';
 import './style.css';
 import {Directions} from './directions.jsx';
+import {DarkDashboard} from './DarkDashboard.jsx';
 const money=n=>n===null?'Unpriced':'$'+Number(n||0).toFixed(6);
 const ms=n=>n>1000?(n/1000).toFixed(2)+'s':Math.round(n||0)+'ms';
 function App(){
@@ -27,4 +28,4 @@ function App(){
 }
 function Metric({icon,title,value,hint}){return <div className="metric"><div>{title}<span>{icon}</span></div><strong>{value}</strong><small>{hint}</small></div>}
 function Badge({status}){return <span className={'badge '+status.toLowerCase()}><i/>{status==='OK'?'Success':status==='ERROR'?'Error':'Incomplete'}</span>}
-createRoot(document.getElementById('root')).render(new URLSearchParams(location.search).has('direction')||new URLSearchParams(location.search).has('dark')?<Directions/>:<App/>);
+createRoot(document.getElementById('root')).render(new URLSearchParams(location.search).has('direction')||new URLSearchParams(location.search).has('dark')?<Directions/>:new URLSearchParams(location.search).has('classic')?<App/>:<DarkDashboard/>);
