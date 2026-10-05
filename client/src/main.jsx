@@ -2,6 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import {Activity,Search,ArrowUpRight,ChevronRight,Clock,CheckCircle2,Layers,RefreshCw,AlertTriangle,Terminal,Eye} from 'lucide-react';
 import './style.css';
+import {Directions} from './directions.jsx';
 const money=n=>n===null?'Unpriced':'$'+Number(n||0).toFixed(6);
 const ms=n=>n>1000?(n/1000).toFixed(2)+'s':Math.round(n||0)+'ms';
 function App(){
@@ -14,7 +15,7 @@ function App(){
  const base=detail?Math.min(...detail.spans.map(s=>Date.parse(s.started_at))):0,end=detail?Math.max(...detail.spans.map(s=>Date.parse(s.ended_at))):0,range=Math.max(1,end-base);
  const ordered=[];function walk(parent,seen=new Set()){for(const span of detail?.spans.filter(s=>s.parent_span_id===parent)||[]){if(seen.has(span.span_id))continue;seen.add(span.span_id);ordered.push(span);walk(span.span_id,seen);}}if(detail){walk(null);for(const s of detail.spans)if(!ordered.some(x=>x.span_id===s.span_id))ordered.push(s);}
  function depth(span,seen=new Set()){if(!span.parent_span_id||seen.has(span.span_id))return 0;seen.add(span.span_id);const parent=detail.spans.find(s=>s.span_id===span.parent_span_id);return parent?1+depth(parent,seen):0;}
- return <><aside><a className="brand" href="/" aria-label="Loupe home"><Eye size={25}/><b>loupe<span>.</span></b></a><div className="workspace"><span className="avatar">L</span><div>Local workspace<small>Development environment</small></div></div><p className="nav-label">OBSERVABILITY</p><div className="nav active"><Activity size={17}/>Traces<span>{total}</span></div><div className="side-note"><Terminal size={20}/><b>See what your agent did.</b><p>Trace the work. Find the failure. Understand the cost.</p><code>pip install ./sdk</code></div><div className="side-bottom"><i/> Local API <small>No deployment configured</small></div></aside>
+ return <><aside><a className="brand" href="/" aria-label="Loupe home"><span className="blinking-eye"><Eye size={25}/></span><b>loupe<span>.</span></b></a><div className="workspace"><span className="avatar">L</span><div>Local workspace<small>Development environment</small></div></div><p className="nav-label">OBSERVABILITY</p><div className="nav active"><Activity size={17}/>Traces<span>{total}</span></div><div className="side-note"><Terminal size={20}/><b>See what your agent did.</b><p>Trace the work. Find the failure. Understand the cost.</p><code>pip install ./sdk</code></div><div className="side-bottom"><i/> Local API <small>No deployment configured</small></div></aside>
  <main><header><div className="crumb">Workspace <ChevronRight size={14}/> <b>Traces</b></div><span className="live"><i/> {error?'Connection issue':'Live · 5s refresh'}</span></header><section className="heading"><div><p className="eyebrow">AGENT OBSERVABILITY</p><h1>Every run, in focus.</h1><p className="sub">Inspect latency, token usage and failures across your agents.</p></div><button onClick={()=>load()}><RefreshCw size={15}/> Refresh</button></section>
  {error&&<div role="alert" className="error"><AlertTriangle size={16}/>{error}<input aria-label="API key" type="password" placeholder="API key (memory only)" onChange={e=>setKey(e.target.value)}/></div>}
  <div className="metrics"><Metric icon={<Layers/>} title="Total runs" value={total} hint="Last 7 days"/><Metric icon={<CheckCircle2/>} title="Success rate" value={total?(100*summary.success/total).toFixed(1)+'%':'—'} hint={(summary.errors||0)+' failed · '+(summary.incomplete||0)+' incomplete'}/><Metric icon={<Clock/>} title="P95 latency" value={ms(summary.p95?.[0])} hint="Trace wall time · approximate"/><Metric icon={<ArrowUpRight/>} title="Known token cost" value={money(summary.known_cost)} hint={(summary.unpriced||0)+' unpriced · '+money(total?summary.known_cost/total:0)+'/run'}/></div>
@@ -26,4 +27,4 @@ function App(){
 }
 function Metric({icon,title,value,hint}){return <div className="metric"><div>{title}<span>{icon}</span></div><strong>{value}</strong><small>{hint}</small></div>}
 function Badge({status}){return <span className={'badge '+status.toLowerCase()}><i/>{status==='OK'?'Success':status==='ERROR'?'Error':'Incomplete'}</span>}
-createRoot(document.getElementById('root')).render(<App/>);
+createRoot(document.getElementById('root')).render(new URLSearchParams(location.search).has('direction')?<Directions/>:<App/>);
