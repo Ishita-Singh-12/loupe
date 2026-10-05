@@ -27,4 +27,4 @@ function App(){
 }
 function Metric({icon,title,value,hint}){return <div className="metric"><div>{title}<span>{icon}</span></div><strong>{value}</strong><small>{hint}</small></div>}
 function Badge({status}){return <span className={'badge '+status.toLowerCase()}><i/>{status==='OK'?'Success':status==='ERROR'?'Error':'Incomplete'}</span>}
-createRoot(document.getElementById('root')).render(new URLSearchParams(location.search).has('direction')?<Directions/>:<App/>);
+createRoot(document.getElementById('root')).render(new URLSearchParams(location.search).has('direction')||new URLSearchParams(location.search).has('dark')?<Directions/>:<App/>);
