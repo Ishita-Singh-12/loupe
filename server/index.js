@@ -1,0 +1,12 @@
+import mongoose from 'mongoose';
+import {MongoMemoryServer} from 'mongodb-memory-server';
+import {readFile} from 'node:fs/promises';
+import {createApp,Span} from './app.js';
+import {DEFAULT_PRICING} from './pricing.js';
+if(process.env.NODE_ENV==='production'&&(!process.env.MONGODB_URI||!process.env.LOUPE_API_KEY))throw new Error('Production requires persistent MONGODB_URI and LOUPE_API_KEY');
+const memory=!process.env.MONGODB_URI?await MongoMemoryServer.create({binary:{version:'7.0.14'}}):null;
+await mongoose.connect(process.env.MONGODB_URI||memory.getUri('loupe'));await Span.init();
+const pricing=process.env.PRICING_FILE?JSON.parse(await readFile(process.env.PRICING_FILE,'utf8')):DEFAULT_PRICING;
+for(const rate of Object.values(pricing.models))if(![rate.input_per_million,rate.output_per_million].every(n=>Number.isFinite(n)&&n>=0))throw new Error('Invalid pricing rates');
+const server=createApp({pricing}).listen(Number(process.env.PORT||4173),process.env.HOST||'127.0.0.1',()=>console.log('Loupe listening: http://127.0.0.1:'+(process.env.PORT||4173)));
+for(const signal of ['SIGTERM','SIGINT'])process.on(signal,async()=>{server.close();await mongoose.disconnect();await memory?.stop();process.exit(0);});
