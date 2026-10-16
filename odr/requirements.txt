@@ -1,0 +1,6 @@
+# Open Deep Research + providers (SDK itself installs from ../sdk)
+open_deep_research==0.0.16
+langchain-google-genai>=2.1.5
+langchain-tavily>=0.2
+tavily-python>=0.5
+psutil>=5.9
