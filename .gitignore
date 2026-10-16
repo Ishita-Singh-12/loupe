@@ -6,3 +6,4 @@ __pycache__/
 *.pyc
 artifacts/
 .venv/
+odr/reports/

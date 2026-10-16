@@ -112,3 +112,7 @@ The current preview uses 64 explicitly simulated task runs, including LLM spans,
 
 ## Live backend
 The backend now accepts OTLP/HTTP JSON at `/v1/traces`, scoped read/write keys, exact CORS origins, cursor pagination, prior-period stats and receive-time retention. See [production notes](docs/production.md) for deployment, auth limits and hosting choices. It is a tested single-workspace portfolio backend, not a claim of high-volume production validation. The public Pages site remains simulated until a host is selected.
+
+## Open Deep Research launcher
+
+`odr/` runs [Open Deep Research](https://github.com/langchain-ai/open_deep_research) locally with Gemini + Tavily and records each run as a loupe trace on the hosted dashboard. One command: `odr\run.bat` (Windows) or `sh odr/run.sh`, then open http://127.0.0.1:8788, type a question, hit Send. See `odr/README.md`.
