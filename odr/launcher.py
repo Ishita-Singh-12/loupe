@@ -173,9 +173,11 @@ async def run_research(question, client):
     except Exception as exc:
         fallback = setting("LOUPE_ODR_FALLBACK_MODEL", FALLBACK_MODEL)
         message = str(exc).lower()
-        if ("resource_exhausted" not in message and "rate" not in message and "429" not in message)                 or not fallback or fallback == config["configurable"]["research_model"]:
+        transient = any(token in message for token in
+                        ("resource_exhausted", "rate", "429", "unavailable", "503", "high demand"))
+        if not transient or not fallback or fallback == config["configurable"]["research_model"]:
             raise
-        print(f"Primary model hit its quota; retrying the run on {fallback} ...")
+        print(f"Primary model unavailable or over quota; retrying the run on {fallback} ...")
         config = research_config(fallback)
         config["callbacks"] = [handler]
         result = await deep_researcher.ainvoke(
