@@ -14,7 +14,7 @@ DOCUMENTS = [
 @trace('execute_tool search_docs', attributes={'gen_ai.operation.name':'execute_tool','gen_ai.tool.name':'search_docs'})
 def search_docs(question):
     terms=set(question.lower().split())
-    ranked=sorted(DOCUMENTS,key=lambda d:len(terms & set(d[1].lower().split())),reverse=True)
+    ranked=sorted(DOCUMENTS,key=lambda d:len(terms & (set(d[1].lower().split()) | set(d[0].split('-')))),reverse=True)
     time.sleep(.035)
     return ranked[:2]
 
