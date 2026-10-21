@@ -1,0 +1,12 @@
+[
+  {"id":"q01","question":"How should I export spans without blocking?","expect_doc":"export-reliability","expect_terms":["background thread","batches"]},
+  {"id":"q02","question":"Why do exports retry transient failures in a bounded queue?","expect_doc":"export-reliability","expect_terms":["bounded queue","retry"]},
+  {"id":"q03","question":"How do trace spans connect?","expect_doc":"trace-model","expect_terms":["parent IDs"]},
+  {"id":"q04","question":"What does a trace represent in an agent run?","expect_doc":"trace-model","expect_terms":["agent run"]},
+  {"id":"q05","question":"What is the cost policy?","expect_doc":"cost-policy","expect_terms":["raw token counts"]},
+  {"id":"q06","question":"How should unknown models be priced?","expect_doc":"cost-policy","expect_terms":["unpriced"]},
+  {"id":"q07","question":"How do we protect privacy?","expect_doc":"privacy","expect_terms":["secret keys"]},
+  {"id":"q08","question":"Are prompts and responses captured by default?","expect_doc":"privacy","expect_terms":["prompts, responses"]},
+  {"id":"f01","question":"How do trace spans connect?","inject_failure":true,"expect_error":"TimeoutError"},
+  {"id":"f02","question":"What is the cost policy?","inject_failure":true,"expect_error":"TimeoutError"}
+]
