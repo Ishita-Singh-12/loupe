@@ -116,3 +116,7 @@ The backend now accepts OTLP/HTTP JSON at `/v1/traces`, scoped read/write keys, 
 ## Open Deep Research launcher
 
 `odr/` runs [Open Deep Research](https://github.com/langchain-ai/open_deep_research) locally with Gemini + Tavily and records each run as a loupe trace on the hosted dashboard. One command: `odr\run.bat` (Windows) or `sh odr/run.sh`, then open http://127.0.0.1:8788, type a question, hit Send. See `odr/README.md`.
+
+## Eval
+
+`python eval/run_eval.py` runs 10 scored cases (`eval/cases.json`) against the demo documentation agent: 8 quality cases checked for retrieval (expected document in the top 2) and answer content, and 2 injected-failure cases checked for the expected error. It is deterministic and makes no model calls. Each case is also sent to Loupe as an `eval case` span with `eval.passed` and check counts, so results show up in the dashboard. It currently scores 10/10 cases (18/18 checks); the first run scored 9/10 and exposed a retrieval bug, fixed in the next commit. This evaluates the demo agent, not the Open Deep Research launcher.
